@@ -8,7 +8,7 @@
 
 ---
 
-# SSH
+## SSH
 * $ ls -la .ssh/ # вывели список созданных ключей  
 * $ ssh-keygen -t ed25519 -C "электронная почта, к которой привязан ваш аккаунт на GitHub"
 * $ ssh-keygen -t rsa -b 4096 -C "электронная почта, к которой привязан ваш аккаунт на GitHub"
@@ -33,7 +33,40 @@
  * Клонировать репозиторий — git clone
   
   
-  Синхронизация локального и удалённого репозиториев
+## Синхронизация локального и удалённого репозиториев
+
 * git remote add origin https://github.com/YandexPracticum/first-project.git (от англ. remote, «удалённый» + add, «добавить») — привяжи локальный репозиторий к удалённому с URL https://github.com/YandexPracticum/first-project.git;
 * git remote -v (от англ. verbose, «подробный») — проверь, что репозитории действительно связались;
 * git push -u origin main (от англ. push, «толкать») — в первый раз загрузи все коммиты из локального репозитория в удалённый с названием origin.
+
+## Запуск Java-файлов на компьютере и работа с JAR
+
+* скомпилировать исходный код в байт-код  
+~~~
+ javac -encoding UTF-8 HelloJdk.java
+~~~
+*  запустить файл с байт-кодом
+~~~
+java -Dfile.encoding=UTF-8 HelloJdk
+~~~
+* Чтобы не компилировать каждый класс по отдельности
+~~~
+javac -d bin -encoding UTF-8 *.java 
+~~~
+* Команда для запуска проекта
+~~~
+java -cp bin Practicum 
+~~~
+
+
+## Как работать с JAR
+
+~~~
+jar cfe <имя jar-файла> <имя стартового класса> <список файлов> 
+jar cfe library.jar Practicum -C bin .
+~~~
+
+*  запустить программу
+~~~
+java -jar library.jar 
+~~~
