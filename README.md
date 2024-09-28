@@ -137,6 +137,7 @@ Conventional Commits предлагает такой формат коммита
 * fix (от англ. «исправить», «устранить») — для исправленных ошибок.
 Более подробный список можно увидеть на сайте с описанием этого стиля.
 
+## Mermaid-схема
 
 HEAD -- это голова.
 Коммит -- это всему голова.
@@ -146,10 +147,8 @@ HEAD -- это голова.
 ```mermaid
 graph LR 
  untracked -- "git add" --> staged;
- staged    -- "???"     --> tracked/comitted;
-
-%% стрелка без текста для примера: 
-  A --> B;
-
+ staged    -- "git commit"     --> tracked/comitted;
+ tracked/comitted -- "change file" --> modified;
+ 
 ```
 <и тут пустая строка!> 
